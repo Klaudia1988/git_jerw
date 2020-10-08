@@ -1,0 +1,23 @@
+{
+    "name": "jazzed-tests-api",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "dependencies": {
+      "allure-commandline": "^2.9.0",
+      "chakram": "^1.5.0",
+      "mocha": "^6.2.0",
+      "mocha-allure-reporter": "^1.4.0",
+      "mocha-multi-reporters": "^1.1.7",
+      "request-promise": "^4.2.4"
+    },
+    "devDependencies": {
+      "eslint": "^6.1.0",
+      "eslint-config-google": "^0.13.0"
+    },
+    "scripts": {
+      "test": "mocha \"./tests/*.js\" --reporter mocha-multi-reporters --reporter-options configFile=mocha.config.json --timeout 10000",
+      "lint": "eslint . --fix --ignore-path ../.gitignore",
+      "test-report": "./node_modules/.bin/allure generate ./allure-results -c -o ./allure-report && allure open ./allure-report"
+    }
+  }
